@@ -3,12 +3,12 @@ class Question {
   final String question;
   final List<String> options;
 
-  Question(
-    this.id,
-    this.answer,
-    this.question,
-    this.options,
-  );
+  Question({
+    required this.id,
+    required this.question,
+    required this.answer,
+    required this.options,
+  });
 }
 
 const List sample_data = [

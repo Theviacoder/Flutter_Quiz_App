@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:quizapp/constants.dart';
+import 'package:quizapp/screens/quiz/QuizScreen.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -10,7 +12,11 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          WebsafeSvg.asset("assets/bg.svg"),
+          Container(
+            width: MediaQuery.of(context).size.width * 1,
+            height: MediaQuery.of(context).size.height * 1,
+            child: WebsafeSvg.asset("assets/bg.svg", fit: BoxFit.fill),
+          ),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -39,7 +45,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                   Spacer(),
                   InkWell(
-                    onTap: () {},
+                    onTap: () => Get.to(QuizPage()),
                     child: Container(
                       alignment: Alignment.center,
                       width: double.infinity,
